@@ -1,0 +1,44 @@
+#Week_3_Class
+
+CREATE TABLE Genre(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+name TEXT
+)
+
+CREATE TABLE Album(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+artist_id INTEGER,
+name TEXT
+)
+
+CREATE TABLE Track(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+title TEXT,
+artist_id INTEGER,
+genre_id INTEGER,
+len INTEGER, rating INTEGER,count INTEGER
+)
+
+INSERT INTO Album(title,artist_id)values("Who MAde Who",2);
+
+INSERT INTO Album(title,artist_id)values("IV",1)
+
+select Album.title,Artist.name from Album join Artist on Album.artist_id=Artist.id
+
+select Track.title,Genre.name from Track join Genre on Track.genre_id=Genre.id
+
+select
+	Track.title,
+	Artist.name,
+	Album.title,
+	Genre.name
+from Track join Artist join Album join Genre
+	on Track.genre_id=Genre.id
+	and Track.album_id=Album.id
+	AND Album.artist_id=Artist.id
+
+	SELECT Track.title, Artist.name, Album.title, Genre.name
+    FROM Track JOIN Genre JOIN Album JOIN Artist
+    ON Track.genre_id = Genre.ID and Track.album_id = Album.id
+        AND Album.artist_id = Artist.id
+    ORDER BY Artist.name LIMIT 3
