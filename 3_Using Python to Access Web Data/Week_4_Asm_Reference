@@ -1,0 +1,23 @@
+
+<h1>The First Page</h1>
+<p>
+If you like, you can switch to the
+<a href="http://www.dr-chuck.com/page2.htm">
+Second Page</a>.
+</p>
+
+Enter - http://www.dr-chuck.com/page1.htm
+
+!!!!print('TAG:', tag)
+TAG: <a href="http://www.dr-chuck.com/page2.htm">
+Second Page</a>
+
+!!!!print('URL:', tag.get('href', None))
+URL: http://www.dr-chuck.com/page2.htm
+
+!!!!print('Contents:', tag.contents[0])
+Contents:
+Second Page
+
+!!!!print('Attrs:', tag.attrs)
+Attrs: {'href': 'http://www.dr-chuck.com/page2.htm'}
